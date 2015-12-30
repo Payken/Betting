@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf tutorial: exercise 2</title>
+    <!-- Latest compiled and minified CSS -->
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{../css/main.css}" />
+</head>
+<body class="container">
+<h1>Thymeleaf tutorial - Answer for exercise 1: bean values</h1>
+<h2>Product information</h2>
+<table class="table-striped"><tr th:each="message : ${krupa} ">
+    <td th:text="${message.id}">1</td>
+    <td><a href="#" th:text="${message.name}">Title ...</a></td>
+</tr>
+</table>
+</body>
+</html>
