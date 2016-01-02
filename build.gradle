@@ -33,7 +33,13 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-thymeleaf')
     runtime('mysql:mysql-connector-java')
-    testCompile('org.springframework.boot:spring-boot-starter-test') 
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    compile 'org.webjars:bootstrap:3.3.6'
+    compile 'org.webjars:angularjs:1.4.0'
+    compile 'org.webjars:jquery:2.1.4'
+
+
 }
 
 

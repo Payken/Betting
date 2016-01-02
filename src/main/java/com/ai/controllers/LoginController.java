@@ -14,14 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/") // url (w domysle http://localhost:8080)
 public class LoginController {
 
-    @Autowired
- private SthService sthService;
 
 
 
     @RequestMapping("/login")  //  rozszerzenie urla z klasy, brak oznacza ze to ten sam url
     public String getView(Model model) {
-    //    model.addAttribute("krupa",sthService.findAll());
         return "login"; // zwraca sciezke wzgledna do widoku, domyslnie folder templates w resources
     }
 

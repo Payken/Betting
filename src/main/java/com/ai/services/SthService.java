@@ -15,26 +15,11 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional  // WAŻNE W CHUJ
+@Transactional  // WAŻNE W CHUJ~~!!!!!!!!!!!
 
 public class SthService {
-    @Autowired
-    private SthRepository sthRepository;
 
-    @PostConstruct
-    public void init(){
-        Sth sthObject = new Sth();
-        sthObject.setName("Mama Selita");
-        sthRepository.save(sthObject);
-    }
 
-    @ModelAttribute("krupa")
-    public List<Sth> messages() {
-        return sthRepository.findAll();
-    }
 
-    public List<Sth> findAll()
-    {
-        return sthRepository.findAll();
-    };
+
 }

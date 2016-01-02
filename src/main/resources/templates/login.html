@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml"
+      ng-app="StaffManagementTool">
 <head>
-    <title>Thymeleaf tutorial: exercise 2</title>
-    <!-- Latest compiled and minified CSS -->
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../css/main-static.css" th:href="@{../css/main.css}" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
+
 </head>
-<body class="container">
-<h1>Thymeleaf tutorial - Answer for exercise 1: bean values</h1>
-<h2>Product information</h2>
-<table class="table-striped"><tr th:each="message : ${krupa} ">
-    <td th:text="${message.id}">1</td>
-    <td><a href="#" th:text="${message.name}">Title ...</a></td>
-</tr>
-</table>
+<body>
+<div th:include="fragments/header :: header"></div>
+<div id="content" layout:fragment="content"></div>
 </body>
 </html>
