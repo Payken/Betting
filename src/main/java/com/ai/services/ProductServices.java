@@ -19,13 +19,22 @@ public class ProductServices {
 
     @Autowired
     private ProductRepository productRepository;
+
     @Autowired
     private ManufacturerRepository manufacturerRepository;
-    public void create(ProductModel productModel){
-    Product product = new Product();
+
+
+    public void create(ProductModel productModel) {
+        Product product = new Product();
         product.setName(productModel.getName());
-        Manufacturer manufacturer = manufacturerRepository.findById(1);
+        Manufacturer manufacturer = manufacturerRepository.getOne(productModel.getManufacturer());
         product.setManufacturer(manufacturer);
+        productRepository.save(product);
+    }
+
+    public void saveProduct(ProductModel productModel) {
+        Product product = new Product();
+        product.setImage(ProductModel.getImage().getBytes());
         productRepository.save(product);
     }
 }

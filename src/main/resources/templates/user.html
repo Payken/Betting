@@ -3,9 +3,10 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
       xmlns="http://www.w3.org/1999/xhtml"
-      ng-app="AIpro">
+      ng-app="StaffManagementTool">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
     <link href="a" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.css}" rel="stylesheet"/>
     <script src="http://cdn.jsdelivr.net/webjars/org.webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
@@ -14,31 +15,9 @@
     <script src="http://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/3.3.6/js/bootstrap.min.js"
             th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
     <script src="a" th:src="@{/js/App.js}"/>
-    <script src="a" th:src="@{/js/admin.js}"/>
+    <script src="a" th:src="@{/js/index.js}"/>
 </head>
 <body>
-<div class="container" ng-controller="adminCtrl">
-
-    <form ng-submit="submitForm()" class="form-group">
-        <label>Dodaj produkt</label>
-        <input type="text" class="form-control" ng-model="name"></input>
-       <select  class="form-control" ng-model="manufacturer">
-
-           <option th:each="manufacturer : ${manufacturers} " th:value="${manufacturer.id}" th:text="${manufacturer.name}">
-           </option>
-
-       </select>
-
-        <input type="file" name="fileUpload" size="200" />
-<button class="btn btn-default" type="submit">Dodaj</button>
-</form>
-    <form ng-submit="addManufacturer()" class="form-group">
-        <label>Dodaj Producenta</label>
-        <input type="text" class="form-control" ng-model="nname"></input>
-
-        <button class="btn btn-default" type="submit">Dodaj</button>
-    </form>
-</div>
 
 </body>
 </html>

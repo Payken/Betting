@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/") // url (w domysle http://localhost:8080)
-public class HomeController {
+public class UserController {
 
 
 
 
-    @RequestMapping()  //  rozszerzenie urla z klasy, brak oznacza ze to ten sam url
+    @RequestMapping("/user")  //  rozszerzenie urla z klasy, brak oznacza ze to ten sam url
     public String getView(Model model) {
-        return "index"; // zwraca sciezke wzgledna do widoku, domyslnie folder templates w resources
+        return "user"; // zwraca sciezke wzgledna do widoku, domyslnie folder templates w resources
     }
 
 

@@ -97,5 +97,6 @@
     <orderEntry type="library" name="Gradle: org.webjars:angularjs:1.4.0" level="project" />
     <orderEntry type="library" name="Gradle: org.webjars:bootstrap:3.3.6" level="project" />
     <orderEntry type="library" name="Gradle: org.webjars:jquery:2.1.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE" level="project" />
   </component>
 </module>

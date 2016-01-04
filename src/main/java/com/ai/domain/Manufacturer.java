@@ -11,20 +11,20 @@ public class Manufacturer {
 
     @Id
     @GeneratedValue
-    Integer id;
-    String name;
+    private Integer Id;
+    private String name;
 
 
 
     @OneToMany(mappedBy = "manufacturer")
-    List<Product> products;
+    private List<Product> products;
 
     public Integer getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public String getName() {
