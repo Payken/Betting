@@ -10,7 +10,7 @@ import java.util.Set;
  */
 @Entity
 
-public class MyOrder{
+public class MyOrder {
 
     public MyOrder(){};
 

@@ -13,32 +13,59 @@
             th:src="@{/webjars/angularjs/1.4.0/angular.min.js}"></script>
     <script src="http://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/3.3.6/js/bootstrap.min.js"
             th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/org.webjars/angular-file-upload/4.1.3/ng-file-upload.min.js"
+            th:src="@{/webjars/angular-file-upload/4.1.3/ng-file-upload.min.js}"></script>
     <script src="a" th:src="@{/js/App.js}"/>
     <script src="a" th:src="@{/js/admin.js}"/>
 </head>
 <body>
 <div class="container" ng-controller="adminCtrl">
-
-    <form ng-submit="submitForm()" class="form-group">
+    <div th:replace="fragments/header :: header">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Static header</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form ng-submit="submitForm()" class="form-group" method="post">
         <label>Dodaj produkt</label>
-        <input type="text" class="form-control" ng-model="name"></input>
+        <input type="text" class="form-control" ng-model="name"/>
+        <!--<input type="file" file-model="myFile"/>-->
        <select  class="form-control" ng-model="manufacturer">
 
            <option th:each="manufacturer : ${manufacturers} " th:value="${manufacturer.id}" th:text="${manufacturer.name}">
            </option>
 
        </select>
+        <input type="text" class="form-control" ng-model="price"/>
+       <input type="file" name="file" fileread="file" id="file"  size="20000" />
+        <button class="btn btn-default" type="submit">Dodaj</button>
 
-        <input type="file" name="fileUpload" size="200" />
-<button class="btn btn-default" type="submit">Dodaj</button>
+
 </form>
+
+<div class="row">
+
+    <div ngf-drop="upload(file)" ngf-select="" name="image"
+         ng-model="file" class="jumbotron drop-box" ngf-drag-over-class="dragover"
+         ngf-multiple="false" ngf-allow-dir="true" accept="image/*"><span th:text="a" th:remove="tag"></span>
+</div>
     <form ng-submit="addManufacturer()" class="form-group">
         <label>Dodaj Producenta</label>
-        <input type="text" class="form-control" ng-model="nname"></input>
+        <input type="text" class="form-control" ng-model="nname"/>
 
         <button class="btn btn-default" type="submit">Dodaj</button>
     </form>
-</div>
 
+    </div>
+
+</div>
 </body>
 </html>

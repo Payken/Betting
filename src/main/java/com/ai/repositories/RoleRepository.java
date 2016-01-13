@@ -1,6 +1,5 @@
 package com.ai.repositories;
 
-import com.ai.domain.MyOrder;
 import com.ai.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 

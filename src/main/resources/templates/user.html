@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
       xmlns="http://www.w3.org/1999/xhtml"
-      ng-app="StaffManagementTool">
+      ng-app="AIpro">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"/>
@@ -15,9 +15,27 @@
     <script src="http://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/3.3.6/js/bootstrap.min.js"
             th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
     <script src="a" th:src="@{/js/App.js}"/>
-    <script src="a" th:src="@{/js/index.js}"/>
+    <!--<script src="a" th:src="@{/js/index.js}"/>-->
 </head>
 <body>
+<div class="container"><div class="btn-group-vertical" role="group" aria-label="...">
 
+    <a href="" class="btn btn-default" role="button">Koszyk</a>
+    <a href="" th:href="@{/index}" class="btn btn-default" role="button">Wróc do sklepu</a>
+    <a href="" class="btn btn-default" role="button">Twoje Dane</a>
+    <a href="" class="btn btn-default" role="button">Zmień Dane</a>
+    <a href="" class="btn btn-default" role="button">Zmień hasło</a>
+    <a href="" class="btn btn-default" role="button">Historia Zamówień</a>
+    <!-- Single button -->
+
+
+
+
+
+
+    <button type="button" class="btn btn-default"><a href="www.google.pl">O nas</a></button>
+
+    <button type="button" class="btn btn-default"><a href="www.google.pl">Kontakt</a></button>
+</div></div>
 </body>
 </html>

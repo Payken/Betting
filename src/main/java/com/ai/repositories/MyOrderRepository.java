@@ -1,6 +1,5 @@
 package com.ai.repositories;
 
-import com.ai.domain.Manufacturer;
 import com.ai.domain.MyOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 

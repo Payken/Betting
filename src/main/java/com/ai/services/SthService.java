@@ -15,7 +15,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional  // WAŻNE W CHUJ~~!!!!!!!!!!!
+@Transactional
 
 public class SthService {
 

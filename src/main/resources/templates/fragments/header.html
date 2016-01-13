@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml"
+      ng-app="AIpro">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="a" th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.css}" rel="stylesheet"/>
+    <script src="http://cdn.jsdelivr.net/webjars/org.webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/angularjs/1.3.15/angular.min.js"
+            th:src="@{/webjars/angularjs/1.4.0/angular.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/3.3.6/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
+    <script src="http://cdn.jsdelivr.net/webjars/org.webjars/angular-file-upload/4.1.3/ng-file-upload.min.js"
+            th:src="@{/webjars/angular-file-upload/4.1.3/ng-file-upload.min.js}"></script>
+    <script src="a" th:src="@{/js/App.js}"/>
+    <script src="a" th:src="@{/js/admin.js}"/>
+</head>
+<body>
+    <nav class="navbar navbar-default" th:fragment="header">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#" th:href="@{/index}">Home<span class="sr-only">(current)</span></a></li>
+                <li><a href="#" sec:authorize="hasRole('ADMIN')" th:href="admin">Admin</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li sec:authorize="isAnonymous()"><a href="#" th:href="@{/login}">Log in</a> </li>
+                <li sec:authorize="isAuthenticated()"><a href="#" th:href="user">USER@</a></li>
+                <li sec:authorize="isAuthenticated()"><a href="#" th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

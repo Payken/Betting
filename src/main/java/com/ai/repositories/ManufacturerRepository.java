@@ -1,7 +1,6 @@
 package com.ai.repositories;
 
 import com.ai.domain.Manufacturer;
-import com.ai.domain.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

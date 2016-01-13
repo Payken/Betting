@@ -9,7 +9,7 @@ import java.util.Set;
  */
 @Entity
 
-public class Role{
+public class Role {
 
     public Role(){};
 

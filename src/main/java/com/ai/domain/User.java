@@ -2,7 +2,6 @@ package com.ai.domain;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 /**
@@ -26,9 +25,20 @@ public class User{
    @ManyToOne
    @JoinColumn(name = "role_id")
    private Role role;
-
+    @OneToOne
+    private Cart cart;
+    private String password;
 
 ///////////////////////////////////////////////////////////////////////
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public Integer getId() {
         return id;
@@ -94,8 +104,15 @@ public class User{
         this.role = role;
     }
 
+    public Cart getCart() {
+        return cart;
+    }
 
-//    @ManyToOne(fetch = FetchType.LAZY)
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    //    @ManyToOne(fetch = FetchType.LAZY)
 
 
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "opinion")

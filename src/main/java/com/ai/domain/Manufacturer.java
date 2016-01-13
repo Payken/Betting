@@ -1,5 +1,7 @@
 package com.ai.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class Manufacturer {
 
 
     @OneToMany(mappedBy = "manufacturer")
+    @JsonIgnore
     private List<Product> products;
 
     public Integer getId() {

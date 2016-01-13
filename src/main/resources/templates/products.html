@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
-      xmlns="http://www.w3.org/1999/xhtml" xmlns:tiles="http://www.w3.org/1999/xhtml"
+      xmlns="http://www.w3.org/1999/xhtml"
       ng-app="AIpro">
 <head>
     <meta charset="UTF-8"/>
@@ -15,31 +15,33 @@
     <script src="http://cdn.jsdelivr.net/webjars/org.webjars/bootstrap/3.3.6/js/bootstrap.min.js"
             th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
     <script src="a" th:src="@{/js/App.js}"/>
-    <!--<script src="a" th:src="@{/js/index.js}"/>-->
-    <link href="a" th:href="@{/css/style.css}" rel="stylesheet"/>
-
+    <script src="a" th:src="@{/js/admin.js}"/>
 </head>
+
 <body>
-<div class="container">
-    <div >
-    <form class=" col-sm-offset-4 col-sm-3 form-login"  th:action="@{/login}" method="post">
-        <label class="col-xs-4"> User Name : </label><input class="col-xs-8" type="text" name="login"/>
-        <label class="col-xs-4"> Password: </label><input class="col-xs-8" type="password" name="password"/>
-        <input type="submit" class="col-xs-4 btn btn-default" value="Sign In"/>
-    </form>
+<div id="content" class="container">
 
+    <div th:replace="fragments/header :: header">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Static header</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="products-container col-sm-12">
+        <div th:each="product : ${products}" class="product col-sm-12">
+            <img src="a"  th:src="${product.image}" class="col-sm-3"> </img>
+            <div class="col-sm-9"> <p th:text="${product.name}"></p></div>
+        </div>
+    </div>
 </div>
-    <div sec:authorize="hasRole('USER')">
-        This content is only shown to users.
-    </div>
-    <div sec:authorize="hasRole('ADMIN')">
-        This content is only shown to Admins.
-    </div>
-    <div sec:authorize="isAuthenticated()">
-        <a th:href="@{/logout}">Log out</a>
-    </div>
-
-</div>
-
 </body>
 </html>

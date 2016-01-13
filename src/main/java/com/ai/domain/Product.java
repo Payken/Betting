@@ -1,10 +1,8 @@
 package com.ai.domain;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.multipart.MultipartFile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 @Entity
@@ -21,15 +19,30 @@ public class Product {
     private Integer id;
     private String name;
     @ManyToOne
-    @JoinColumn(name = "manufacturer_id")
+    @JoinColumn(name = "manufacturer")
+    @JsonIgnore
     private Manufacturer manufacturer;
     @ManyToMany
+    private List<Cart> cart;
+    @ManyToMany
     private List<MyOrder> myOrders;
-    //private MultipartFile image;
+//    @Lob
+//    private MultipartFile image;
     @Lob
-    private byte[] image;
-
+    private String image;
+    @Lob
+    private byte[] file;
+    private float price;
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
     public List<MyOrder> getOrder() {
         return myOrders;
@@ -71,7 +84,11 @@ public class Product {
         this.myOrders = myOrders;
     }
 
- //   public MultipartFile getImage() {
+//    public MultipartFile getImage() {
+//        return image;
+//    }
+
+    //   public MultipartFile getImage() {
  //       return image;
  //   }
 
@@ -79,11 +96,49 @@ public class Product {
  //       this.image = image;
  //   }
 
-    public byte[] getImage() {
+
+//    public byte[] getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(byte[] image) {
+//        this.image = image;
+//    }
+
+//    public String getImage() {
+//        return image;
+//    }
+//
+//    public void setImage(String image) {
+//        this.image = image;
+//    }
+
+    public byte[] getFile() {
+        return file;
+    }
+
+    public void setFile(byte[] file) {
+        this.file = file;
+    }
+
+//    public void setImage(MultipartFile image) {
+//
+//        this.image = image;
+//    }
+
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
+    }
+
+    public List<Cart> getCart() {
+        return cart;
+    }
+
+    public void setCart(List<Cart> cart) {
+        this.cart = cart;
     }
 }
